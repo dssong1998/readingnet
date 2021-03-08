@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.js": "/readingnet/static/js/main.8f09cf32.chunk.js",
+    "main.js.map": "/readingnet/static/js/main.8f09cf32.chunk.js.map",
+    "runtime-main.js": "/readingnet/static/js/runtime-main.8b8768b5.js",
+    "runtime-main.js.map": "/readingnet/static/js/runtime-main.8b8768b5.js.map",
+    "static/css/2.7fd35a25.chunk.css": "/readingnet/static/css/2.7fd35a25.chunk.css",
+    "static/js/2.c8193b85.chunk.js": "/readingnet/static/js/2.c8193b85.chunk.js",
+    "static/js/2.c8193b85.chunk.js.map": "/readingnet/static/js/2.c8193b85.chunk.js.map",
+    "index.html": "/readingnet/index.html",
+    "static/css/2.7fd35a25.chunk.css.map": "/readingnet/static/css/2.7fd35a25.chunk.css.map",
+    "static/js/2.c8193b85.chunk.js.LICENSE.txt": "/readingnet/static/js/2.c8193b85.chunk.js.LICENSE.txt",
+    "static/media/post.1.09e7833f.md": "/readingnet/static/media/post.1.09e7833f.md",
+    "static/media/post.2.75655ebf.md": "/readingnet/static/media/post.2.75655ebf.md",
+    "static/media/post.3.bdef2d7b.md": "/readingnet/static/media/post.3.bdef2d7b.md"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8b8768b5.js",
+    "static/css/2.7fd35a25.chunk.css",
+    "static/js/2.c8193b85.chunk.js",
+    "static/js/main.8f09cf32.chunk.js"
+  ]
+}
