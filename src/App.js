@@ -1,18 +1,13 @@
 import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import {makeStyles} from '@material-ui/core/styles';
-import Header from './components/Header';
 import Routes from './Router';
 import Footer from './components/Footer';
 import SwiperCore, {Autoplay, Navigation, Pagination, A11y} from 'swiper';
-
-// Import Swiper styles
 import 'swiper/swiper.min.css';
 import 'swiper/components/navigation/navigation.min.css';
 import 'swiper/components/pagination/pagination.min.css';
 import 'swiper/components/scrollbar/scrollbar.min.css';
-
-// Import Swiper styles
 import 'swiper/swiper.min.css';
 import 'swiper/components/navigation/navigation.min.css';
 import 'swiper/components/pagination/pagination.min.css';
@@ -21,15 +16,11 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     flexDirection: 'column',
-    width: '100%',
-    height: '100%',
     overflowX: 'hidden',
   },
   main: {
     display: 'flex',
     flexDirection: 'row',
-    width: '100%',
-    height: '100vh',
   },
   imageSection: {
     backgroundColor: '#cfe8fc',
@@ -41,7 +32,6 @@ function App() {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <Header />
       <div className={classes.main}>
         <Routes />
       </div>
