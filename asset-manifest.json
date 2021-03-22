@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.js": "/readingnet/static/js/main.e6c573df.chunk.js",
-    "main.js.map": "/readingnet/static/js/main.e6c573df.chunk.js.map",
+    "main.js": "/readingnet/static/js/main.a94ba29d.chunk.js",
+    "main.js.map": "/readingnet/static/js/main.a94ba29d.chunk.js.map",
     "runtime-main.js": "/readingnet/static/js/runtime-main.8b8768b5.js",
     "runtime-main.js.map": "/readingnet/static/js/runtime-main.8b8768b5.js.map",
     "static/css/2.5432ffc4.chunk.css": "/readingnet/static/css/2.5432ffc4.chunk.css",
-    "static/js/2.ed16568e.chunk.js": "/readingnet/static/js/2.ed16568e.chunk.js",
-    "static/js/2.ed16568e.chunk.js.map": "/readingnet/static/js/2.ed16568e.chunk.js.map",
+    "static/js/2.88ea4716.chunk.js": "/readingnet/static/js/2.88ea4716.chunk.js",
+    "static/js/2.88ea4716.chunk.js.map": "/readingnet/static/js/2.88ea4716.chunk.js.map",
     "index.html": "/readingnet/index.html",
     "static/css/2.5432ffc4.chunk.css.map": "/readingnet/static/css/2.5432ffc4.chunk.css.map",
-    "static/js/2.ed16568e.chunk.js.LICENSE.txt": "/readingnet/static/js/2.ed16568e.chunk.js.LICENSE.txt",
-    "static/js/main.e6c573df.chunk.js.LICENSE.txt": "/readingnet/static/js/main.e6c573df.chunk.js.LICENSE.txt",
+    "static/js/2.88ea4716.chunk.js.LICENSE.txt": "/readingnet/static/js/2.88ea4716.chunk.js.LICENSE.txt",
+    "static/js/main.a94ba29d.chunk.js.LICENSE.txt": "/readingnet/static/js/main.a94ba29d.chunk.js.LICENSE.txt",
     "static/media/bg1.jpg": "/readingnet/static/media/bg1.f457ed67.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.8b8768b5.js",
     "static/css/2.5432ffc4.chunk.css",
-    "static/js/2.ed16568e.chunk.js",
-    "static/js/main.e6c573df.chunk.js"
+    "static/js/2.88ea4716.chunk.js",
+    "static/js/main.a94ba29d.chunk.js"
   ]
 }
