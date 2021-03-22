@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/readingnet/static/js/main.ca085b21.chunk.js",
-    "main.js.map": "/readingnet/static/js/main.ca085b21.chunk.js.map",
+    "main.js": "/readingnet/static/js/main.c6b6d90f.chunk.js",
+    "main.js.map": "/readingnet/static/js/main.c6b6d90f.chunk.js.map",
     "runtime-main.js": "/readingnet/static/js/runtime-main.8b8768b5.js",
     "runtime-main.js.map": "/readingnet/static/js/runtime-main.8b8768b5.js.map",
     "static/css/2.5432ffc4.chunk.css": "/readingnet/static/css/2.5432ffc4.chunk.css",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.8b8768b5.js",
     "static/css/2.5432ffc4.chunk.css",
     "static/js/2.c5b6bb0f.chunk.js",
-    "static/js/main.ca085b21.chunk.js"
+    "static/js/main.c6b6d90f.chunk.js"
   ]
 }
