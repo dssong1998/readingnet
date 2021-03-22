@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/readingnet/static/js/main.7dfec251.chunk.js",
-    "main.js.map": "/readingnet/static/js/main.7dfec251.chunk.js.map",
+    "main.js": "/readingnet/static/js/main.ca085b21.chunk.js",
+    "main.js.map": "/readingnet/static/js/main.ca085b21.chunk.js.map",
     "runtime-main.js": "/readingnet/static/js/runtime-main.8b8768b5.js",
     "runtime-main.js.map": "/readingnet/static/js/runtime-main.8b8768b5.js.map",
     "static/css/2.5432ffc4.chunk.css": "/readingnet/static/css/2.5432ffc4.chunk.css",
@@ -10,15 +10,15 @@
     "index.html": "/readingnet/index.html",
     "static/css/2.5432ffc4.chunk.css.map": "/readingnet/static/css/2.5432ffc4.chunk.css.map",
     "static/js/2.c5b6bb0f.chunk.js.LICENSE.txt": "/readingnet/static/js/2.c5b6bb0f.chunk.js.LICENSE.txt",
-    "static/media/bg1.jpg": "/readingnet/static/media/bg1.f457ed67.jpg",
-    "static/media/bg10.jpg": "/readingnet/static/media/bg10.a447b5b8.jpg",
-    "static/media/bg11.jpg": "/readingnet/static/media/bg11.08fb79ad.jpg",
+    "static/media/bg1.jpg": "/readingnet/static/media/bg1.b8faab09.jpg",
+    "static/media/bg10.jpg": "/readingnet/static/media/bg10.d8b2178c.jpg",
+    "static/media/bg11.jpg": "/readingnet/static/media/bg11.32eaf3a4.jpg",
     "static/media/bg5.jpg": "/readingnet/static/media/bg5.c668d09f.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.8b8768b5.js",
     "static/css/2.5432ffc4.chunk.css",
     "static/js/2.c5b6bb0f.chunk.js",
-    "static/js/main.7dfec251.chunk.js"
+    "static/js/main.ca085b21.chunk.js"
   ]
 }
