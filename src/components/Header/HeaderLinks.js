@@ -1,22 +1,22 @@
 /*eslint-disable*/
-import React from 'react';
-// react components for routing our app without refresh
-import {Link} from 'react-router-dom';
+import React from "react";
+// react components for routing our app without refresh;
+import { Link } from "react-router-dom";
 
 // @material-ui/core components
-import {makeStyles} from '@material-ui/core/styles';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import Tooltip from '@material-ui/core/Tooltip';
+import { makeStyles } from "@material-ui/core/styles";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import Tooltip from "@material-ui/core/Tooltip";
 
 // @material-ui/icons
-import {Apps} from '@material-ui/icons';
+import { Apps } from "@material-ui/icons";
 
 // core components
-import CustomDropdown from 'components/CustomDropdown/CustomDropdown.js';
-import Button from 'components/CustomButtons/Button.js';
+import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
+import Button from "components/CustomButtons/Button.js";
 
-import styles from 'assets/jss/material-kit-react/components/headerLinksStyle.js';
+import styles from "assets/jss/material-kit-react/components/headerLinksStyle.js";
 
 const useStyles = makeStyles(styles);
 
@@ -35,8 +35,8 @@ export default function HeaderLinks(props) {
         </Link>
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Link to="/campagins" className={classes.navLink}>
-          독서문화 활동
+        <Link to="/campaigns" className={classes.navLink}>
+          독서문화 진흥
         </Link>
       </ListItem>
       <ListItem className={classes.listItem}>
@@ -45,7 +45,7 @@ export default function HeaderLinks(props) {
           buttonText="대회"
           buttonProps={{
             className: classes.navLink,
-            color: 'transparent',
+            color: "transparent",
           }}
           buttonIcon={Apps}
           dropdownList={[
@@ -73,7 +73,7 @@ export default function HeaderLinks(props) {
           buttonText="기부리딩 기부리더"
           buttonProps={{
             className: classes.navLink,
-            color: 'transparent',
+            color: "transparent",
           }}
           buttonIcon={Apps}
           dropdownList={[
@@ -93,31 +93,6 @@ export default function HeaderLinks(props) {
         />
       </ListItem>
       <ListItem className={classes.listItem}>
-        <CustomDropdown
-          noLiPadding
-          buttonText="샘플 페이지"
-          buttonProps={{
-            className: classes.navLink,
-            color: 'transparent',
-          }}
-          buttonIcon={Apps}
-          dropdownList={[
-            <Link to="/" className={classes.dropdownLink}>
-              샘플0
-            </Link>,
-            <Link to="/1" className={classes.dropdownLink}>
-              샘플1
-            </Link>,
-            <Link to="/2" className={classes.dropdownLink}>
-              샘플2
-            </Link>,
-            <Link to="/3" className={classes.dropdownLink}>
-              샘플3
-            </Link>,
-          ]}
-        />
-      </ListItem>
-      <ListItem className={classes.listItem}>
         {/* <Tooltip title="Delete">
           <IconButton aria-label="Delete">
             <DeleteIcon />
@@ -126,8 +101,8 @@ export default function HeaderLinks(props) {
         <Tooltip
           id="instagram-twitter"
           title="유튜브 채널"
-          placement={window.innerWidth > 959 ? 'top' : 'left'}
-          classes={{tooltip: classes.tooltip}}
+          placement={window.innerWidth > 959 ? "top" : "left"}
+          classes={{ tooltip: classes.tooltip }}
         >
           <Button
             href="https://youtube.com"
@@ -135,7 +110,7 @@ export default function HeaderLinks(props) {
             color="transparent"
             className={classes.navLink}
           >
-            <i className={classes.socialIcons + ' fab fa-youtube'} />
+            <i className={classes.socialIcons + " fab fa-youtube"} />
           </Button>
         </Tooltip>
       </ListItem>

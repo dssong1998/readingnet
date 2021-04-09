@@ -1,44 +1,63 @@
-import React from 'react';
-import Container from '@material-ui/core/Container';
-import {makeStyles} from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import Markdown from '../../components/Markdown';
+import React from "react";
+// nodejs library that concatenates classes
+import classNames from "classnames";
+// @material-ui/core components
+import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    minWidth: 'calc(100vw - 280px)',
-    paddingTop: '15px',
-    // height: '100%',
-    // overflowY: 'auto',
-  },
-  main: {
-    marginTop: theme.spacing(3),
-  },
-  markdown: {
-    ...theme.typography.body2,
-    padding: theme.spacing(3, 0),
-  },
-}));
+// @material-ui/icons
 
-const CampaignPresenter = ({posts}) => {
+// core components
+import Header from "components/Header/Header.js";
+import GridContainer from "components/Grid/GridContainer.js";
+import GridItem from "components/Grid/GridItem.js";
+import HeaderLinks from "components/Header/HeaderLinks.js";
+import Parallax from "components/Parallax.js";
+
+import styles from "assets/jss/material-kit-react/views/landingPage.js";
+
+// Sections for this page
+import ProductSection from "components/ProductSection.js";
+
+const dashboardRoutes = [];
+
+const useStyles = makeStyles(styles);
+
+export default function LandingPage(props) {
   const classes = useStyles();
-  return (
-    <Container className={classes.root}>
-      <Grid item xs={12} md={8}>
-        <Typography variant="h6" gutterBottom>
-          걸어온 길
-        </Typography>
-        <Divider />
-        {posts.map((post) => (
-          <Markdown className={classes.markdown} key={post.substring(0, 40)}>
-            {post}
-          </Markdown>
-        ))}
-      </Grid>
-    </Container>
-  );
-};
 
-export default CampaignPresenter;
+  const { ...rest } = props;
+  return (
+    <div style={{ width: "100%", height: "100%" }}>
+      <Header
+        color="transparent"
+        routes={dashboardRoutes}
+        brand="사단법인 국민독서문화진흥회"
+        rightLinks={<HeaderLinks />}
+        fixed
+        changeColorOnScroll={{
+          height: 400,
+          color: "white",
+        }}
+        {...rest}
+      />
+      <Parallax
+        filter
+        image={require("assets/img/bg1.jpg")}
+        style={{ height: "80vh" }}
+      >
+        <div className={classes.container}>
+          <GridContainer>
+            <GridItem xs={12} sm={12} md={6}>
+              <h1 className={classes.title}>독서 문화 진흥 활동</h1>
+            </GridItem>
+          </GridContainer>
+        </div>
+      </Parallax>
+      <div className={classNames(classes.main, classes.mainRaised)}>
+        <div className={classes.container}>
+          <ProductSection />
+        </div>
+      </div>
+    </div>
+  );
+}

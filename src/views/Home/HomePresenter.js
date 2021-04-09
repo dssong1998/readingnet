@@ -54,48 +54,58 @@ const HomePresenter = ({mainFeaturedPost, featuredPosts}) => {
         brand="사단법인 국민독서문화진흥회"
         rightLinks={<HeaderLinks />}
         fixed
-        color="darkTransparent"
+        color="dark"
         changeColorOnScroll={{
           height: 400,
           color: 'white',
         }}
       />
-      <Parallax image={require('assets/img/bg1.jpg')}>
+      <Parallax image={require('assets/img/bg10.jpg')}>
         <div className={classes.container}>
           <GridContainer>
             <GridItem style={{height: '80px'}} />
             <GridItem>
-              <Hidden smDown>
-                <h1 className={classes.brand}>
-                  책 읽는 나라가 지속가능한 가치를 만듭니다.
-                </h1>
-                <h3 className={classes.brand}>
-                  사단법인 국민독서문화진흥회는
-                  <br />전 국민의 건전한 독서문화와 올바른 가치관 형성을 돕는
-                  비영리단체입니다.
-                  <br />
-                  다양한 독서운동과 나눔으로 독서생태계를 조성하여
-                  독서교육강국으로 만들겠습니다.
-                </h3>
-              </Hidden>
-              <Hidden mdUp>
-                <h3
-                  ref={textWrapper}
-                  className={classes.brand + ' moving-title'}
-                  style={{fontWeight: '900', fontSize: '18px'}}
-                >
-                  책 읽는 나라가 지속가능한 가치를 만듭니다.
-                </h3>
-                <div style={{borderTop: '1px solid white'}} />
-                <h5 className={classes.brand}>
-                  사단법인 국민독서문화진흥회는
-                  <br />전 국민의 건전한 독서문화와 올바른 가치관 형성을 돕는
-                  비영리단체입니다.
-                  <br />
-                  다양한 독서운동과 나눔으로 독서생태계를 조성하여
-                  독서교육강국으로 만들겠습니다.
-                </h5>
-              </Hidden>
+              <div
+                style={{
+                  backgroundColor: 'rgba(0,0,0,0.3)',
+                  borderRadius: '3px',
+                  boxShadow:
+                    '0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(33, 33, 33, 0.46)',
+                  padding: '1px 10px',
+                }}
+              >
+                <Hidden smDown>
+                  <h1 className={classes.brand}>
+                    책 읽는 나라가 지속가능한 가치를 만듭니다.
+                  </h1>
+                  <h3 className={classes.brand}>
+                    사단법인 국민독서문화진흥회는
+                    <br />전 국민의 건전한 독서문화와 올바른 가치관 형성을 돕는
+                    비영리단체입니다.
+                    <br />
+                    다양한 독서운동과 나눔으로 독서생태계를 조성하여
+                    독서교육강국으로 만들겠습니다.
+                  </h3>
+                </Hidden>
+                <Hidden mdUp>
+                  <h3
+                    ref={textWrapper}
+                    className={classes.brand + ' moving-title'}
+                    style={{fontWeight: '900', fontSize: '18px'}}
+                  >
+                    책 읽는 나라가 지속가능한 가치를 만듭니다.
+                  </h3>
+                  <div style={{borderTop: '1px solid white'}} />
+                  <h5 className={classes.brand}>
+                    사단법인 국민독서문화진흥회는
+                    <br />전 국민의 건전한 독서문화와 올바른 가치관 형성을 돕는
+                    비영리단체입니다.
+                    <br />
+                    다양한 독서운동과 나눔으로 독서생태계를 조성하여
+                    독서교육강국으로 만들겠습니다.
+                  </h5>
+                </Hidden>
+              </div>
             </GridItem>
           </GridContainer>
         </div>
