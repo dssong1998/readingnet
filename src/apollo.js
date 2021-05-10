@@ -32,7 +32,10 @@ const onErrorLink = onError((e) => {
 });
 
 const uploadHttpLink = createUploadLink({
-  uri: process.env.REACT_APP_DATABASE_URI + "/graphql",
+  uri:
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:4000/graphql"
+      : "https://readingnet-database.herokuapp.com/graphql",
 });
 
 const client = new ApolloClient({
