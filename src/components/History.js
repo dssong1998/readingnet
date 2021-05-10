@@ -1,4 +1,5 @@
-import { useMutation } from "@apollo/client";
+import { useMutation, useReactiveVar } from "@apollo/client";
+import { isLoggedInVar } from "apollo";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
@@ -61,6 +62,7 @@ const SubmitBtn = styled.input`
 `;
 
 const History = ({ data }) => {
+  const login = useReactiveVar(isLoggedInVar);
   const { register: yearRegister, handleSubmit: yearHandle } = useForm();
   const history = useHistory();
   const {
@@ -122,16 +124,18 @@ const History = ({ data }) => {
   return (
     <GridItem xs={12} sm={12} md={6}>
       <Subtitle>연도 별 활동내역</Subtitle>
-      <form onSubmit={yearHandle(YearValid)}>
-        <BtnBox>
-          <YearInput
-            type="text"
-            placeholder="연도"
-            {...yearRegister("year", { required: "연도를 입력해야합니다." })}
-          />
-          <CreateBtn type="submit" value="연도 추가" />
-        </BtnBox>
-      </form>
+      {login ? (
+        <form onSubmit={yearHandle(YearValid)}>
+          <BtnBox>
+            <YearInput
+              type="text"
+              placeholder="연도"
+              {...yearRegister("year", { required: "연도를 입력해야합니다." })}
+            />
+            <CreateBtn type="submit" value="연도 추가" />
+          </BtnBox>
+        </form>
+      ) : null}
       {data.map((item) => {
         return (
           <Content key={item.id}>
@@ -141,34 +145,36 @@ const History = ({ data }) => {
               <p key={content}>{content}</p>
             ))}
             <br />
-            <form onSubmit={contentHandle(ContentValid)}>
-              <BtnBox>
-                <ContentInput
-                  type="text"
-                  placeholder="내용"
-                  {...contentRegister("content")}
-                  onChange={({ target: { value } }) => {
-                    setContentValue("content", `${value}/+/${item.year}`);
-                  }}
-                />
-                <ActionBox>
-                  <SubmitBtn
-                    type="button"
-                    value="삭제하기"
-                    onClick={() => {
-                      if (!deleteLoading) {
-                        deleteHistory({
-                          variables: {
-                            id: parseInt(item.id),
-                          },
-                        });
-                      }
+            {login ? (
+              <form onSubmit={contentHandle(ContentValid)}>
+                <BtnBox>
+                  <ContentInput
+                    type="text"
+                    placeholder="내용"
+                    {...contentRegister("content")}
+                    onChange={({ target: { value } }) => {
+                      setContentValue("content", `${value}/+/${item.year}`);
                     }}
                   />
-                  <CreateBtn type="submit" value="내용 추가" />
-                </ActionBox>
-              </BtnBox>
-            </form>
+                  <ActionBox>
+                    <SubmitBtn
+                      type="button"
+                      value="삭제하기"
+                      onClick={() => {
+                        if (!deleteLoading) {
+                          deleteHistory({
+                            variables: {
+                              id: parseInt(item.id),
+                            },
+                          });
+                        }
+                      }}
+                    />
+                    <CreateBtn type="submit" value="내용 추가" />
+                  </ActionBox>
+                </BtnBox>
+              </form>
+            ) : null}
           </Content>
         );
       })}
