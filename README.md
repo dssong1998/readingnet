@@ -2,8 +2,8 @@ readingnet.org page renewal
 
 [x] header
 [x] tab
-[ ] footer
-[ ] home
-[ ] introduce
+[x] footer
+[x] home
+[x] introduce
 [ ] news
 [ ] donation

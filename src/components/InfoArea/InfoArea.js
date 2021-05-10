@@ -24,13 +24,16 @@ export default function InfoArea(props) {
   });
   return (
     <div className={classes.infoArea}>
-      <div className={iconWrapper}>
+      <div
+        className={iconWrapper}
+        style={{ display: "flex", justifyContent: "center" }}
+      >
         <props.icon className={iconClasses} />
       </div>
       <div className={classes.descriptionWrapper}>
         <h4 className={classes.title}>{title}</h4>
         <br />
-        {description.map((des, index) => (
+        {description?.map((des, index) => (
           <pre key={index} className={classes.description}>
             {des}
           </pre>

@@ -13,7 +13,7 @@ const infoStyle = {
   infoArea: {
     maxWidth: "360px",
     margin: "0 auto",
-    padding: "0px",
+    padding: "0px 15px",
   },
   iconWrapper: {
     float: "left",
@@ -53,6 +53,7 @@ const infoStyle = {
     ...title,
     textAlign: "center",
     fontSize: "24px",
+    fontFamily: "Do Hyun",
   },
   description: {
     color: "#040404",
@@ -60,6 +61,7 @@ const infoStyle = {
     marginTop: "0px",
     fontSize: "14px",
     textAlign: "left",
+    fontFamily: "Nanum Gothic",
   },
   iconWrapperVertical: {
     float: "none",

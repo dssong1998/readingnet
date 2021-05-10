@@ -1,13 +1,13 @@
-import {makeStyles} from '@material-ui/core/styles';
-import React, {useCallback} from 'react';
-import Header from 'components/Header/Header';
-import HeaderLinks from 'components/Header/HeaderLinks.js';
-import Parallax from '../../components/Parallax';
-import GridContainer from 'components/Grid/GridContainer.js';
-import GridItem from 'components/Grid/GridItem.js';
-import styles from '../../assets/jss/material-kit-react/views/components.js';
-import Hidden from '@material-ui/core/Hidden';
-import Anime from 'animejs';
+import { makeStyles } from "@material-ui/core/styles";
+import React, { useCallback } from "react";
+import Header from "components/Header/Header";
+import HeaderLinks from "components/Header/HeaderLinks.js";
+import Parallax from "../components/Parallax";
+import GridContainer from "components/Grid/GridContainer.js";
+import GridItem from "components/Grid/GridItem.js";
+import styles from "../assets/jss/material-kit-react/views/components.js";
+import Hidden from "@material-ui/core/Hidden";
+import Anime from "animejs";
 // import Container from '@material-ui/core/Container';
 // import Grid from '@material-ui/core/Grid';
 // import PostSwiper from '../../components/Swiper';
@@ -15,7 +15,7 @@ import Anime from 'animejs';
 
 const useStyles = makeStyles(styles);
 
-const HomePresenter = ({mainFeaturedPost, featuredPosts}) => {
+const HomePresenter = ({ mainFeaturedPost, featuredPosts }) => {
   const classes = useStyles();
   const textWrapper = useCallback((node) => {
     if (node !== null) {
@@ -24,9 +24,9 @@ const HomePresenter = ({mainFeaturedPost, featuredPosts}) => {
         "<span class='letter'>$&</span>"
       );
       Anime.timeline().add({
-        targets: '.moving-title .letter',
+        targets: ".moving-title .letter",
         opacity: [0, 1],
-        easing: 'easeInOutQuad',
+        easing: "easeInOutQuad",
         duration: 2250,
         delay: (el, i) => 150 * (i + 1),
       });
@@ -49,7 +49,7 @@ const HomePresenter = ({mainFeaturedPost, featuredPosts}) => {
     //     ))}
     //   </Grid>
     //  </Container>
-    <div style={{width: '100%', height: '100%'}}>
+    <div style={{ width: "100%", height: "100%" }}>
       <Header
         brand="사단법인 국민독서문화진흥회"
         rightLinks={<HeaderLinks />}
@@ -57,21 +57,21 @@ const HomePresenter = ({mainFeaturedPost, featuredPosts}) => {
         color="dark"
         changeColorOnScroll={{
           height: 400,
-          color: 'white',
+          color: "white",
         }}
       />
-      <Parallax image={require('assets/img/bg10.jpg')}>
+      <Parallax image={require("assets/img/bg10.jpg")}>
         <div className={classes.container}>
           <GridContainer>
-            <GridItem style={{height: '80px'}} />
+            <GridItem style={{ height: "80px" }} />
             <GridItem>
               <div
                 style={{
-                  backgroundColor: 'rgba(0,0,0,0.3)',
-                  borderRadius: '3px',
+                  backgroundColor: "rgba(0,0,0,0.3)",
+                  borderRadius: "3px",
                   boxShadow:
-                    '0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(33, 33, 33, 0.46)',
-                  padding: '1px 10px',
+                    "0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(33, 33, 33, 0.46)",
+                  padding: "1px 10px",
                 }}
               >
                 <Hidden smDown>
@@ -90,12 +90,12 @@ const HomePresenter = ({mainFeaturedPost, featuredPosts}) => {
                 <Hidden mdUp>
                   <h3
                     ref={textWrapper}
-                    className={classes.brand + ' moving-title'}
-                    style={{fontWeight: '900', fontSize: '18px'}}
+                    className={classes.brand + " moving-title"}
+                    style={{ fontWeight: "900", fontSize: "18px" }}
                   >
                     책 읽는 나라가 지속가능한 가치를 만듭니다.
                   </h3>
-                  <div style={{borderTop: '1px solid white'}} />
+                  <div style={{ borderTop: "1px solid white" }} />
                   <h5 className={classes.brand}>
                     사단법인 국민독서문화진흥회는
                     <br />전 국민의 건전한 독서문화와 올바른 가치관 형성을 돕는

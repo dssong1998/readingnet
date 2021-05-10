@@ -16,7 +16,7 @@ import Parallax from "components/Parallax.js";
 import styles from "assets/jss/material-kit-react/views/landingPage.js";
 
 // Sections for this page
-import ProductSection from "components/ProductSection.js";
+import ProductSection from "components/Section/ProductSection.js";
 
 const dashboardRoutes = [];
 
@@ -35,16 +35,12 @@ export default function LandingPage(props) {
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
-          height: 400,
+          height: 200,
           color: "white",
         }}
         {...rest}
       />
-      <Parallax
-        filter
-        image={require("assets/img/bg1.jpg")}
-        style={{ height: "80vh" }}
-      >
+      <Parallax filter image={require("assets/img/bg_campaign.jpg")} small>
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
@@ -53,7 +49,10 @@ export default function LandingPage(props) {
           </GridContainer>
         </div>
       </Parallax>
-      <div className={classNames(classes.main, classes.mainRaised)}>
+      <div
+        className={classNames(classes.main, classes.mainRaised)}
+        style={{ marginTop: "-30px" }}
+      >
         <div className={classes.container}>
           <ProductSection />
         </div>

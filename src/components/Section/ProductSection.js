@@ -3,9 +3,9 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
 // @material-ui/icons
-import Chat from "@material-ui/icons/Chat";
-import VerifiedUser from "@material-ui/icons/VerifiedUser";
-import Fingerprint from "@material-ui/icons/Fingerprint";
+import Edit from "@material-ui/icons/Edit";
+import LocalAtm from "@material-ui/icons/LocalAtm";
+import MenuBook from "@material-ui/icons/MenuBook";
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -23,8 +23,24 @@ export default function ProductSection() {
         <GridContainer>
           <GridItem xs={12} sm={12} md={4}>
             <InfoArea
-              title="Go Write!
-              쓰Go"
+              title="Go Read Books! 책 읽Go"
+              description={[
+                "책 읽는 가족",
+                "책 읽는 대한민국 시상식",
+                "독서동아리 지원",
+                "전국 고전읽기 백일장 대회",
+                "전국 청소년 독서감상문 발표대회",
+                "아동·청소년 가족사랑 독서감상문대회",
+                "병영 독서코칭",
+              ]}
+              icon={MenuBook}
+              iconColor="info"
+              vertical
+            />
+          </GridItem>
+          <GridItem xs={12} sm={12} md={4}>
+            <InfoArea
+              title="Go Write! 쓰Go"
               description={[
                 "WWH131키워드[패턴]글쓰기 지식플랫폼",
                 "WWH131서평단 운영",
@@ -40,41 +56,22 @@ export default function ProductSection() {
                 " - 청소년또래서평지도사 1,2,3급",
                 " - 청소년문화감상평지도사 1,2,3급",
               ]}
-              icon={Chat}
-              iconColor="info"
+              icon={Edit}
+              iconColor="danger"
               vertical
             />
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
             <InfoArea
-              title="Go Donate!
-              기부하Go"
+              title="Go Donate! 기부하Go"
               description={[
                 "K-books 123 북메신저 릴레이",
                 "기부리딩 기부리더 운동",
                 "I love Book! 리틀라이브러리 기증 운동",
                 "Book Bag 기증 운동",
               ]}
-              icon={VerifiedUser}
+              icon={LocalAtm}
               iconColor="success"
-              vertical
-            />
-          </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
-            <InfoArea
-              title="Go Read Books!
-              책 읽Go"
-              description={[
-                "책 읽는 가족",
-                "책 읽는 대한민국 시상식",
-                "독서동아리 지원",
-                "전국 고전읽기 백일장 대회",
-                "전국 청소년 독서감상문 발표대회",
-                "아동·청소년 가족사랑 독서감상문대회",
-                "병영 독서코칭",
-              ]}
-              icon={Fingerprint}
-              iconColor="danger"
               vertical
             />
           </GridItem>
