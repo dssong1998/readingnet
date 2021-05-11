@@ -9,7 +9,6 @@ import styles from "assets/jss/material-kit-react/views/landingPage.js";
 import { useHistory, useParams } from "react-router-dom";
 import { useMutation, useReactiveVar } from "@apollo/client";
 import { isLoggedInVar } from "apollo";
-import { useState } from "react";
 import CREATE_POST_MUTATION from "components/mutations/CreatePostMutation";
 import { useForm } from "react-hook-form";
 
@@ -25,6 +24,12 @@ const PostContainer = styled.form`
   justify-content: center;
   width: 100%;
   padding: 20px 10px;
+`;
+const FileInput = styled.input`
+  padding: 10px 0px;
+  color: black;
+  opacity: 0;
+  display: none;
 `;
 const TitleInput = styled.input`
   width: 50%;
@@ -65,16 +70,6 @@ const Label = styled.label`
   width: 100px;
   text-align: center;
 `;
-const FileInput = styled.input`
-  padding: 10px 0px;
-  color: black;
-  opacity: 0;
-  display: none;
-`;
-const FileName = styled.div`
-  color: black;
-  margin-left: 15px;
-`;
 const FileInputBox = styled.div`
   display: flex;
   flex-direction: row;
@@ -91,8 +86,6 @@ const NewPost = (props) => {
   const classes = useStyles();
   const history = useHistory();
   const login = useReactiveVar(isLoggedInVar);
-  const [file, setFile] = useState("선택하지 않음");
-  const [imageFile, setImageFile] = useState("선택하지 않음");
   const { type } = useParams();
   const onCompleted = (result) => {
     history.goBack();
@@ -150,15 +143,8 @@ const NewPost = (props) => {
             <FileInputBox>
               <Label>
                 이미지 넣기
-                <FileInput
-                  {...register("ContentImage")}
-                  type="file"
-                  onChange={({ target: { value } }) => {
-                    setImageFile(value.split("\\")[2]);
-                  }}
-                />
+                <FileInput {...register("ContentImage")} type="file" />
               </Label>
-              <FileName>{imageFile}</FileName>
             </FileInputBox>
             <TextInput
               {...register("ContentText")}
@@ -170,15 +156,8 @@ const NewPost = (props) => {
             <FileInputBox>
               <Label>
                 첨부파일 넣기
-                <FileInput
-                  {...register("ContentFile")}
-                  type="file"
-                  onChange={({ target: { value } }) => {
-                    setFile(value.split("\\")[2]);
-                  }}
-                />
+                <FileInput {...register("ContentFile")} type="file" />
               </Label>
-              <FileName>{file}</FileName>
             </FileInputBox>
             <ButtonBox>
               <SubmitBtn type="submit" value="제출하기" />

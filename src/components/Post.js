@@ -7,7 +7,6 @@ import { useForm } from "react-hook-form";
 import UPDATE_POST_MUTATION from "./mutations/UpdatePostMutation";
 import { useHistory } from "react-router-dom";
 import DELETE_POST_MUTATION from "./mutations/DeletePostMutation";
-import { useState } from "react";
 
 const PostContainer = styled.form`
   display: flex;
@@ -80,10 +79,6 @@ const FileInput = styled.input`
   opacity: 0;
   display: none;
 `;
-const FileName = styled.div`
-  color: black;
-  margin-left: 15px;
-`;
 const FileInputBox = styled.div`
   display: flex;
   flex-direction: row;
@@ -95,8 +90,6 @@ const FileInputBox = styled.div`
 
 export default function Post({ data }) {
   const { register, handleSubmit, setValue } = useForm({ mode: "onChange" });
-  const [file, setFile] = useState("선택하지 않음");
-  const [imageFile, setImageFile] = useState("선택하지 않음");
   const login = useReactiveVar(isLoggedInVar);
   const history = useHistory();
   const deleteComplete = (result) => {
@@ -171,15 +164,8 @@ export default function Post({ data }) {
         <FileInputBox>
           <Label>
             이미지 넣기
-            <FileInput
-              {...register("ContentImage")}
-              type="file"
-              onChange={({ target: { value } }) => {
-                setImageFile(value.split("\\")[2]);
-              }}
-            />
+            <FileInput {...register("ContentImage")} type="file" />
           </Label>
-          <FileName>{imageFile}</FileName>
         </FileInputBox>
       ) : null}
       {login ? (
@@ -198,15 +184,8 @@ export default function Post({ data }) {
         <FileInputBox>
           <Label>
             첨부파일 넣기
-            <FileInput
-              {...register("ContentFile")}
-              type="file"
-              onChange={({ target: { value } }) => {
-                setFile(value.split("\\")[2]);
-              }}
-            />
+            <FileInput {...register("ContentFile")} type="file" />
           </Label>
-          <FileName>{file}</FileName>
         </FileInputBox>
       ) : null}
       {login ? (
