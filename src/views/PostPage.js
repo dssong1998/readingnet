@@ -45,7 +45,9 @@ const PostPage = (props) => {
         {...rest}
       />
       <Container className={classNames(classes.main, classes.mainRaised)}>
-        <Post data={data.seeSinglePost} />
+        <div className={classes.container}>
+          <Post data={data.seeSinglePost} />
+        </div>
       </Container>
     </div>
   );

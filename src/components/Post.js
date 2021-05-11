@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import UPDATE_POST_MUTATION from "./mutations/UpdatePostMutation";
 import { useHistory } from "react-router-dom";
 import DELETE_POST_MUTATION from "./mutations/DeletePostMutation";
+import { useState } from "react";
 
 const PostContainer = styled.form`
   display: flex;
@@ -21,10 +22,6 @@ const Image = styled.img`
   width: 100%;
   justify-content: center;
   align-items: center;
-`;
-const FileInput = styled.input`
-  padding: 10px 0px;
-  color: black;
 `;
 const TitleInput = styled.input`
   width: 50%;
@@ -65,9 +62,41 @@ const SubmitBtn = styled.input`
   align-self: right;
   opacity: 0.5;
 `;
+const Label = styled.label`
+  margin: 15px 0px;
+  color: black;
+  background-color: #e7e7e7;
+  border-radius: 5px;
+  &:hover {
+    cursor: pointer;
+  }
+  padding: 10px 5px;
+  width: 100px;
+  text-align: center;
+`;
+const FileInput = styled.input`
+  padding: 10px 0px;
+  color: black;
+  opacity: 0;
+  display: none;
+`;
+const FileName = styled.div`
+  color: black;
+  margin-left: 15px;
+`;
+const FileInputBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding: 5px 10px;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+`;
 
 export default function Post({ data }) {
   const { register, handleSubmit, setValue } = useForm({ mode: "onChange" });
+  const [file, setFile] = useState("선택하지 않음");
+  const [imageFile, setImageFile] = useState("선택하지 않음");
   const login = useReactiveVar(isLoggedInVar);
   const history = useHistory();
   const deleteComplete = (result) => {
@@ -138,7 +167,21 @@ export default function Post({ data }) {
         <Title>{data.title}</Title>
       )}
       {data.image ? <Image src={data.image} alt="post" /> : null}
-      {login ? <FileInput {...register("ContentImage")} type="file" /> : null}
+      {login ? (
+        <FileInputBox>
+          <Label>
+            이미지 넣기
+            <FileInput
+              {...register("ContentImage")}
+              type="file"
+              onChange={({ target: { value } }) => {
+                setImageFile(value.split("\\")[2]);
+              }}
+            />
+          </Label>
+          <FileName>{imageFile}</FileName>
+        </FileInputBox>
+      ) : null}
       {login ? (
         <TextInput
           {...register("ContentText")}
@@ -151,7 +194,21 @@ export default function Post({ data }) {
         <TextContent>{data.payload}</TextContent>
       )}
       {data.file ? <a href={data.file}>첨부파일</a> : null}
-      {login ? <FileInput {...register("ContentFile")} type="file" /> : null}
+      {login ? (
+        <FileInputBox>
+          <Label>
+            첨부파일 넣기
+            <FileInput
+              {...register("ContentFile")}
+              type="file"
+              onChange={({ target: { value } }) => {
+                setFile(value.split("\\")[2]);
+              }}
+            />
+          </Label>
+          <FileName>{file}</FileName>
+        </FileInputBox>
+      ) : null}
       {login ? (
         <SubmitBox>
           <SubmitBtn

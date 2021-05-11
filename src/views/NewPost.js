@@ -26,12 +26,6 @@ const PostContainer = styled.form`
   width: 100%;
   padding: 20px 10px;
 `;
-const FileInput = styled.input`
-  padding: 10px 0px;
-  color: black;
-  opacity: 0;
-  display: none;
-`;
 const TitleInput = styled.input`
   width: 50%;
   padding: 20px 10px;
@@ -70,6 +64,12 @@ const Label = styled.label`
   padding: 10px 5px;
   width: 100px;
   text-align: center;
+`;
+const FileInput = styled.input`
+  padding: 10px 0px;
+  color: black;
+  opacity: 0;
+  display: none;
 `;
 const FileName = styled.div`
   color: black;
@@ -138,51 +138,53 @@ const NewPost = (props) => {
         {...rest}
       />
       <Container className={classNames(classes.main, classes.mainRaised)}>
-        <PostContainer onSubmit={handleSubmit(onValid)}>
-          <TitleInput
-            type="text"
-            {...register("ContentTitle")}
-            onChange={({ target: { value } }) => {
-              setValue("ContentTitle", value);
-            }}
-          />
-          <FileInputBox>
-            <Label>
-              이미지 넣기
-              <FileInput
-                {...register("ContentImage")}
-                type="file"
-                onChange={({ target: { value } }) => {
-                  setImageFile(value.split("\\")[2]);
-                }}
-              />
-            </Label>
-            <FileName>{imageFile}</FileName>
-          </FileInputBox>
-          <TextInput
-            {...register("ContentText")}
-            onChange={({ target: { value } }) => {
-              setValue("ContentText", value);
-            }}
-            rows={40}
-          />
-          <FileInputBox>
-            <Label>
-              첨부파일 넣기
-              <FileInput
-                {...register("ContentFile")}
-                type="file"
-                onChange={({ target: { value } }) => {
-                  setFile(value.split("\\")[2]);
-                }}
-              />
-            </Label>
-            <FileName>{file}</FileName>
-          </FileInputBox>
-          <ButtonBox>
-            <SubmitBtn type="submit" value="제출하기" />
-          </ButtonBox>
-        </PostContainer>
+        <div className={classes.container}>
+          <PostContainer onSubmit={handleSubmit(onValid)}>
+            <TitleInput
+              type="text"
+              {...register("ContentTitle")}
+              onChange={({ target: { value } }) => {
+                setValue("ContentTitle", value);
+              }}
+            />
+            <FileInputBox>
+              <Label>
+                이미지 넣기
+                <FileInput
+                  {...register("ContentImage")}
+                  type="file"
+                  onChange={({ target: { value } }) => {
+                    setImageFile(value.split("\\")[2]);
+                  }}
+                />
+              </Label>
+              <FileName>{imageFile}</FileName>
+            </FileInputBox>
+            <TextInput
+              {...register("ContentText")}
+              onChange={({ target: { value } }) => {
+                setValue("ContentText", value);
+              }}
+              rows={40}
+            />
+            <FileInputBox>
+              <Label>
+                첨부파일 넣기
+                <FileInput
+                  {...register("ContentFile")}
+                  type="file"
+                  onChange={({ target: { value } }) => {
+                    setFile(value.split("\\")[2]);
+                  }}
+                />
+              </Label>
+              <FileName>{file}</FileName>
+            </FileInputBox>
+            <ButtonBox>
+              <SubmitBtn type="submit" value="제출하기" />
+            </ButtonBox>
+          </PostContainer>
+        </div>
       </Container>
     </div>
   );
